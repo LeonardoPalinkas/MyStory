@@ -15,6 +15,9 @@
 		D405CB1E23D9D5AC00776B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D405CB1C23D9D5AC00776B62 /* Main.storyboard */; };
 		D405CB2023D9D5B200776B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D405CB1F23D9D5B200776B62 /* Assets.xcassets */; };
 		D405CB2323D9D5B200776B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D405CB2123D9D5B200776B62 /* LaunchScreen.storyboard */; };
+		D4B9FD3623E05F0400181C31 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */; };
+		D4B9FD3923E060D200181C31 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9FD3823E060D200181C31 /* PlayerEntity.swift */; };
+		D4D5C76223DA69110019E1E0 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4D5C76123DA69110019E1E0 /* Minecraft.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		D405CB1F23D9D5B200776B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D405CB2223D9D5B200776B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D405CB2423D9D5B200776B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		D4B9FD3823E060D200181C31 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
+		D4D5C76123DA69110019E1E0 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,8 @@
 		D405CB1123D9D5AC00776B62 /* MyStory */ = {
 			isa = PBXGroup;
 			children = (
+				D4B9FD3723E0608700181C31 /* Entities */,
+				D4B9FD3423E05EB900181C31 /* Components */,
 				D405CB1223D9D5AC00776B62 /* AppDelegate.swift */,
 				D405CB1423D9D5AC00776B62 /* GameScene.sks */,
 				D405CB1623D9D5AC00776B62 /* Actions.sks */,
@@ -69,8 +77,25 @@
 				D405CB1F23D9D5B200776B62 /* Assets.xcassets */,
 				D405CB2123D9D5B200776B62 /* LaunchScreen.storyboard */,
 				D405CB2423D9D5B200776B62 /* Info.plist */,
+				D4D5C76123DA69110019E1E0 /* Minecraft.ttf */,
 			);
 			path = MyStory;
+			sourceTree = "<group>";
+		};
+		D4B9FD3423E05EB900181C31 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D4B9FD3723E0608700181C31 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9FD3823E060D200181C31 /* PlayerEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D5C76223DA69110019E1E0 /* Minecraft.ttf in Resources */,
 				D405CB1E23D9D5AC00776B62 /* Main.storyboard in Resources */,
 				D405CB1523D9D5AC00776B62 /* GameScene.sks in Resources */,
 				D405CB2023D9D5B200776B62 /* Assets.xcassets in Resources */,
@@ -148,6 +174,8 @@
 			files = (
 				D405CB1923D9D5AC00776B62 /* GameScene.swift in Sources */,
 				D405CB1B23D9D5AC00776B62 /* GameViewController.swift in Sources */,
+				D4B9FD3623E05F0400181C31 /* SpriteComponent.swift in Sources */,
+				D4B9FD3923E060D200181C31 /* PlayerEntity.swift in Sources */,
 				D405CB1323D9D5AC00776B62 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
