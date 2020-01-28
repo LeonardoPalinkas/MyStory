@@ -17,6 +17,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     
     override func didMove(to view: SKView) {
         
+        let camera = SKCameraNode()
+        self.camera = camera
+        addChild(camera)
+        
         setUpGestureRecognizers()
         
         player = PlayerEntity(node: self.childNode(withName: "player") as! SKSpriteNode)
@@ -25,7 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     
     @objc func jump() {
         let nodeBody = player.spriteComponent.node.physicsBody!
-        nodeBody.velocity.dy = CGFloat(500)
+        nodeBody.velocity.dy = CGFloat(700)
         
 //        if player.spriteComponent.node.physicsBody?.allContactedBodies().count != 0 {
 //            player.movementComponent?.jump()
@@ -38,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         let nodeBody = player.spriteComponent.node.physicsBody!
 
         let pos = sender.location(in: self.view!)
-        let velocity = 200
+        let velocity = 300
 
         if pos.x < self.view!.frame.width/2 {
             // left
@@ -74,5 +78,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        self.camera?.position = player.spriteComponent.node.position + CGPoint(x: 0, y: frame.size.height/6)
     }
 }

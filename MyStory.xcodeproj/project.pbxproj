@@ -15,6 +15,7 @@
 		D405CB1E23D9D5AC00776B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D405CB1C23D9D5AC00776B62 /* Main.storyboard */; };
 		D405CB2023D9D5B200776B62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D405CB1F23D9D5B200776B62 /* Assets.xcassets */; };
 		D405CB2323D9D5B200776B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D405CB2123D9D5B200776B62 /* LaunchScreen.storyboard */; };
+		D4B88FC623E06E1F004D939C /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B88FC523E06E1F004D939C /* CGPointExtensions.swift */; };
 		D4B9FD3623E05F0400181C31 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */; };
 		D4B9FD3923E060D200181C31 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9FD3823E060D200181C31 /* PlayerEntity.swift */; };
 		D4D5C76223DA69110019E1E0 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4D5C76123DA69110019E1E0 /* Minecraft.ttf */; };
@@ -31,6 +32,7 @@
 		D405CB1F23D9D5B200776B62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D405CB2223D9D5B200776B62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D405CB2423D9D5B200776B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B88FC523E06E1F004D939C /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		D4B9FD3823E060D200181C31 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
 		D4D5C76123DA69110019E1E0 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				D405CB2123D9D5B200776B62 /* LaunchScreen.storyboard */,
 				D405CB2423D9D5B200776B62 /* Info.plist */,
 				D4D5C76123DA69110019E1E0 /* Minecraft.ttf */,
+				D4B88FC523E06E1F004D939C /* CGPointExtensions.swift */,
 			);
 			path = MyStory;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				D405CB1B23D9D5AC00776B62 /* GameViewController.swift in Sources */,
 				D4B9FD3623E05F0400181C31 /* SpriteComponent.swift in Sources */,
 				D4B9FD3923E060D200181C31 /* PlayerEntity.swift in Sources */,
+				D4B88FC623E06E1F004D939C /* CGPointExtensions.swift in Sources */,
 				D405CB1323D9D5AC00776B62 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
