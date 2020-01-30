@@ -35,6 +35,11 @@ class Enemy {
             for i in 1...2 {
                 frames.append(SKTexture(imageNamed: "alergias\(i)"))
             }
+            
+        case "Billy Bully":
+            for i in 1...2 {
+                frames.append(SKTexture(imageNamed: "Billy\(i)"))
+            }
         default :
             break
         }
