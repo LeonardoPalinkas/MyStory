@@ -22,6 +22,7 @@ class PlayerEntity: GKEntity {
         addComponent(spriteComponent)
         spriteComponent.node.entity = self
         
+        
     }
     
     required init?(coder: NSCoder) {

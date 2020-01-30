@@ -14,7 +14,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     let tapRec = UITapGestureRecognizer()
     let longPressRec = UILongPressGestureRecognizer()
     var player: PlayerEntity!
+    private var enemies = [Enemy]()
     
+    let velocity = 600
+    var moveLeft = false
+    var moveRight = false
+
     override func didMove(to view: SKView) {
         
         let camera = SKCameraNode()
@@ -24,6 +29,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         setUpGestureRecognizers()
         
         player = PlayerEntity(node: self.childNode(withName: "player") as! SKSpriteNode)
+        
+        
+        // Enemies
+        enumerateChildNodes(withName: "enemy") { (node, stop) in
+            let enemy = Enemy(node: node as! SKSpriteNode)
+            self.enemies.append(enemy)
+        }
 
     }
     
@@ -42,26 +54,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         let nodeBody = player.spriteComponent.node.physicsBody!
 
         let pos = sender.location(in: self.view!)
-        let velocity = 300
 
         if pos.x < self.view!.frame.width/2 {
             // left
-            player.spriteComponent.node.xScale = abs(player.spriteComponent.node.xScale) * -1.0
-            nodeBody.applyForce(CGVector(dx: velocity * -1, dy: 0))
+            moveLeft = true
+            moveRight = false
 
         } else {
             // right
-            player.spriteComponent.node.xScale = abs(player.spriteComponent.node.xScale) * 1.0
-            nodeBody.applyForce(CGVector(dx: velocity, dy: 0))
+            moveRight = true
+            moveLeft = false
 
         }
         
         if sender.state == .ended {
+            moveLeft = false
+            moveRight = false
             // quanto maior, mais devagar
             nodeBody.velocity.dx /= 3
             
         }
     }
+    
     
     func setUpGestureRecognizers() {
         tapRec.addTarget(self, action: #selector(jump))
@@ -78,6 +92,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
         self.camera?.position = player.spriteComponent.node.position + CGPoint(x: 0, y: frame.size.height/6)
+
+        let nodeBody = player.spriteComponent.node.physicsBody!
+        
+        if moveLeft {
+            // left
+            player.spriteComponent.node.xScale = abs(player.spriteComponent.node.xScale) * -1.0
+            nodeBody.applyForce(CGVector(dx: velocity * -1, dy: 0))
+
+        } else if moveRight {
+            // right
+            player.spriteComponent.node.xScale = abs(player.spriteComponent.node.xScale) * 1.0
+            nodeBody.applyForce(CGVector(dx: velocity, dy: 0))
+
+        }
     }
 }
