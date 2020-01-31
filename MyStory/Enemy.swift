@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 class Enemy {
     
@@ -15,6 +16,7 @@ class Enemy {
     
     private var movementAnim: SKAction!
     private var direction: String!
+    private var soundPlayer: AVAudioPlayer!
     
     init(node: SKSpriteNode) {
         self.node = node
@@ -34,6 +36,7 @@ class Enemy {
         case "Mr Allergies":
             for i in 1...2 {
                 frames.append(SKTexture(imageNamed: "alergias\(i)"))
+                playAllergies()
             }
             
         case "Billy Bully":
@@ -74,7 +77,26 @@ class Enemy {
         node.xScale = 1
         node.run(movementAnim.reversed()) {
             self.go()
+            
+            
         }
     }
+    
+    func playAllergies() {
+              
+              let url = Bundle.main.url(forResource: "Monster_Alien_Grunt", withExtension: "mp3")!
+              
+              do {
+                  soundPlayer =  try AVAudioPlayer(contentsOf: url)
+              } catch {
+                  print("could not load sound file")
+              }
+              soundPlayer.numberOfLoops = 2
+              soundPlayer.volume = 0
+              soundPlayer.setVolume(0.15, fadeDuration: 2.0)
+              soundPlayer.prepareToPlay()
+              soundPlayer.play()
+              
+          }
     
 }

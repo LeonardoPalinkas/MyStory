@@ -8,17 +8,22 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate {
     
     let tapRec = UITapGestureRecognizer()
     let longPressRec = UILongPressGestureRecognizer()
     var player: PlayerEntity!
+    
     private var enemies = [Enemy]()
+    private var musicPlayer: AVAudioPlayer!
     
     let velocity = 600
     var moveLeft = false
     var moveRight = false
+    
+   
 
     override func didMove(to view: SKView) {
         
@@ -36,12 +41,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             let enemy = Enemy(node: node as! SKSpriteNode)
             self.enemies.append(enemy)
         }
+        
+        // Music
+        playMusic()
 
     }
     
     @objc func jump() {
         let nodeBody = player.spriteComponent.node.physicsBody!
         nodeBody.velocity.dy = CGFloat(700)
+        run(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false))
         
 //        if player.spriteComponent.node.physicsBody?.allContactedBodies().count != 0 {
 //            player.movementComponent?.jump()
@@ -101,12 +110,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             // left
             player.spriteComponent.node.xScale = abs(player.spriteComponent.node.xScale) * -1.0
             nodeBody.applyForce(CGVector(dx: velocity * -1, dy: 0))
+//            run(SKAction.playSoundFileNamed("Steps.wav", waitForCompletion: true))
 
         } else if moveRight {
             // right
             player.spriteComponent.node.xScale = abs(player.spriteComponent.node.xScale) * 1.0
             nodeBody.applyForce(CGVector(dx: velocity, dy: 0))
+//            run(SKAction.playSoundFileNamed("Steps.wav", waitForCompletion:true))
+            
 
         }
     }
+    
+    func playMusic() {
+           
+           let url = Bundle.main.url(forResource: "Solar_Flare", withExtension: "mp3")!
+           
+           do {
+               musicPlayer =  try AVAudioPlayer(contentsOf: url)
+           } catch {
+               print("could not load sound file")
+           }
+           musicPlayer.numberOfLoops = -1
+           musicPlayer.volume = 0
+           musicPlayer.setVolume(0.2, fadeDuration: 2.0)
+           musicPlayer.prepareToPlay()
+           musicPlayer.play()
+       }
+    
+    
 }
