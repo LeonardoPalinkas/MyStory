@@ -118,16 +118,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         }
     }
     
-    
     @objc func jump() {
         let nodeBody = player.spriteComponent.node.physicsBody!
-        nodeBody.velocity.dy = CGFloat(700)
+        nodeBody.velocity.dy = 700
         run(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false))
-        
-//        if player.spriteComponent.node.physicsBody?.allContactedBodies().count != 0 {
-//            player.movementComponent?.jump()
-//            player.movementComponent.ground = false
-//        }
     }
     
     @objc func walk(sender: UILongPressGestureRecognizer) {
@@ -156,6 +150,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             
         }
     }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            if gestureRecognizer.location(in: self.view) == otherGestureRecognizer.location(in: self.view) {
+                return false
+            }
+            if gestureRecognizer is UILongPressGestureRecognizer || otherGestureRecognizer is UILongPressGestureRecognizer {
+                return true
+            }
+            return false
+        }
     
     
     func setUpGestureRecognizers() {
