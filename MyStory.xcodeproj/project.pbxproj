@@ -17,8 +17,8 @@
 		D405CB2323D9D5B200776B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D405CB2123D9D5B200776B62 /* LaunchScreen.storyboard */; };
 		D46351CA23E30DF7008229AB /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46351C923E30DF7008229AB /* Enemy.swift */; };
 		D46DF98123E3803000FD2DC5 /* Monster_Alien_Grunt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D46DF98023E3803000FD2DC5 /* Monster_Alien_Grunt.mp3 */; };
-		D46DF98323E3834E00FD2DC5 /* Solar_Flare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D46DF98223E3834E00FD2DC5 /* Solar_Flare.mp3 */; };
 		D46DF98523E3851200FD2DC5 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = D46DF98423E3851200FD2DC5 /* jump.wav */; };
+		D46DF98723E3BCE800FD2DC5 /* musica.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D46DF98623E3BCE800FD2DC5 /* musica.mp3 */; };
 		D4B88FC623E06E1F004D939C /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B88FC523E06E1F004D939C /* CGPointExtensions.swift */; };
 		D4B9FD3623E05F0400181C31 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */; };
 		D4B9FD3923E060D200181C31 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9FD3823E060D200181C31 /* PlayerEntity.swift */; };
@@ -38,8 +38,8 @@
 		D405CB2423D9D5B200776B62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46351C923E30DF7008229AB /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		D46DF98023E3803000FD2DC5 /* Monster_Alien_Grunt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Monster_Alien_Grunt.mp3; sourceTree = "<group>"; };
-		D46DF98223E3834E00FD2DC5 /* Solar_Flare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Solar_Flare.mp3; sourceTree = "<group>"; };
 		D46DF98423E3851200FD2DC5 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
+		D46DF98623E3BCE800FD2DC5 /* musica.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musica.mp3; sourceTree = "<group>"; };
 		D4B88FC523E06E1F004D939C /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		D4B9FD3523E05F0400181C31 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		D4B9FD3823E060D200181C31 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				D46351C923E30DF7008229AB /* Enemy.swift */,
 				D46DF98423E3851200FD2DC5 /* jump.wav */,
 				D46DF98023E3803000FD2DC5 /* Monster_Alien_Grunt.mp3 */,
-				D46DF98223E3834E00FD2DC5 /* Solar_Flare.mp3 */,
+				D46DF98623E3BCE800FD2DC5 /* musica.mp3 */,
 			);
 			path = MyStory;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 				D46DF98123E3803000FD2DC5 /* Monster_Alien_Grunt.mp3 in Resources */,
 				D405CB2023D9D5B200776B62 /* Assets.xcassets in Resources */,
 				D405CB2323D9D5B200776B62 /* LaunchScreen.storyboard in Resources */,
-				D46DF98323E3834E00FD2DC5 /* Solar_Flare.mp3 in Resources */,
+				D46DF98723E3BCE800FD2DC5 /* musica.mp3 in Resources */,
 				D405CB1723D9D5AC00776B62 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

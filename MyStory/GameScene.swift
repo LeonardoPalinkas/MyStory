@@ -23,9 +23,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     var moveLeft = false
     var moveRight = false
     
+    struct PhysicsCategory {
+        static let Player: UInt32 = 0
+        static let Interacoes: UInt32 = 0b1
+        static let Chao: UInt32 = 0b10
+    }
    
 
     override func didMove(to view: SKView) {
+        
+        physicsWorld.contactDelegate = self
         
         let camera = SKCameraNode()
         self.camera = camera
@@ -44,8 +51,73 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         
         // Music
         playMusic()
+        
+        setUpContact()
 
+        childNode(withName: "Contato")!.children.forEach({
+            $0.physicsBody?.categoryBitMask = PhysicsCategory.Chao
+        })
     }
+    
+    func setUpContact() {
+        let body = player.spriteComponent.node.physicsBody!
+        body.categoryBitMask = PhysicsCategory.Player
+        body.contactTestBitMask = PhysicsCategory.Interacoes
+        body.collisionBitMask = PhysicsCategory.Chao
+        
+        childNode(withName: "Z-6")!.children.forEach({
+            let body = $0.physicsBody!
+            body.categoryBitMask = PhysicsCategory.Interacoes
+            body.contactTestBitMask = PhysicsCategory.Player
+            body.collisionBitMask = 0
+            body.fieldBitMask = PhysicsCategory.Player
+        })
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        var other = contact.bodyA
+        if contact.bodyA.categoryBitMask == PhysicsCategory.Player {
+            other = contact.bodyB
+        }
+        
+        if other.categoryBitMask == PhysicsCategory.Interacoes {
+            
+            switch other.node?.name {
+            case "Dino":
+                let dinoText = childNode(withName: "dinoText")!
+                dinoText.alpha = 1
+            case "Desenho":
+                let dinoText = childNode(withName: "desenhoText")!
+                dinoText.alpha = 1
+            default:
+                break
+            }
+            
+        }
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        var other = contact.bodyA
+        if contact.bodyA.categoryBitMask == PhysicsCategory.Player {
+            other = contact.bodyB
+        }
+        
+        if other.categoryBitMask == PhysicsCategory.Interacoes {
+            
+            switch other.node?.name {
+            case "Dino":
+                let dinoText = childNode(withName: "dinoText")!
+                dinoText.alpha = 0
+            case "Desenho":
+                let dinoText = childNode(withName: "desenhoText")!
+                dinoText.alpha = 0
+            default:
+                break
+            }
+            
+        }
+    }
+    
     
     @objc func jump() {
         let nodeBody = player.spriteComponent.node.physicsBody!
@@ -124,14 +196,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
     
     func playMusic() {
            
-           let url = Bundle.main.url(forResource: "Solar_Flare", withExtension: "mp3")!
+           let url = Bundle.main.url(forResource: "musica", withExtension: "mp3")!
            
            do {
                musicPlayer =  try AVAudioPlayer(contentsOf: url)
            } catch {
                print("could not load sound file")
            }
-           musicPlayer.numberOfLoops = -1
+           musicPlayer.numberOfLoops = 5
            musicPlayer.volume = 0
            musicPlayer.setVolume(0.2, fadeDuration: 2.0)
            musicPlayer.prepareToPlay()
