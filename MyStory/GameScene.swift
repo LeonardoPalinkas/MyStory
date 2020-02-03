@@ -50,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         }
         
         // Music
-        playMusic()
+//        playMusic()
         
         setUpContact()
 
@@ -283,21 +283,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
         }
     }
     
-    func playMusic() {
-           
-           let url = Bundle.main.url(forResource: "musica", withExtension: "mp3")!
-           
-           do {
-               musicPlayer =  try AVAudioPlayer(contentsOf: url)
-           } catch {
-               print("could not load sound file")
-           }
-           musicPlayer.numberOfLoops = 5
-           musicPlayer.volume = 0
-           musicPlayer.setVolume(0.2, fadeDuration: 2.0)
-           musicPlayer.prepareToPlay()
-           musicPlayer.play()
-       }
+//    func playMusic() {
+//
+//           let url = Bundle.main.url(forResource: "musica", withExtension: "mp3")!
+//
+//           do {
+//               musicPlayer =  try AVAudioPlayer(contentsOf: url)
+//           } catch {
+//               print("could not load sound file")
+//           }
+//           musicPlayer.numberOfLoops = 5
+//           musicPlayer.volume = 0
+//           musicPlayer.setVolume(0.2, fadeDuration: 2.0)
+//           musicPlayer.prepareToPlay()
+//           musicPlayer.play()
+//       }
     
     
 }
