@@ -110,6 +110,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
              case "Design":
                 let designText = childNode(withName: "designText")!
                 designText.alpha = 1
+            case "Faculdade":
+                let faculdadeText = childNode(withName: "faculdadeText")!
+                faculdadeText.alpha = 1
+            case "Amizades":
+                let amizadesText = childNode(withName: "amizadesText")!
+                amizadesText.alpha = 1
+            case "Bi":
+                let biText = childNode(withName: "biText")!
+                biText.alpha = 1
+            case "HQ":
+                let hqText = childNode(withName: "quadrinhosText")!
+                hqText.alpha = 1
+            case "Aplle":
+                let appleText = childNode(withName: "appleText")!
+                appleText.alpha = 1
+            
             default:
                 break
             }
@@ -137,22 +153,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
                 viniText.alpha = 0
             case "Livros":
                 let livrosText = childNode(withName: "livrosText")!
-                livrosText.alpha = 1
+                livrosText.alpha = 0
             case "Cinema":
                 let cinemaText = childNode(withName: "cinemaText")!
-                cinemaText.alpha = 1
+                cinemaText.alpha = 0
             case "Games":
                 let gamesText = childNode(withName: "pcText")!
-                gamesText.alpha = 1
+                gamesText.alpha = 0
             case "Rock":
                 let rockText = childNode(withName: "rockText")!
-                rockText.alpha = 1
+                rockText.alpha = 0
             case "Astronomia":
                 let astronomiaText = childNode(withName: "astronomiaText")!
-                astronomiaText.alpha = 1
+                astronomiaText.alpha = 0
              case "Design":
                 let designText = childNode(withName: "designText")!
-                designText.alpha = 1
+                designText.alpha = 0
+            case "Faculdade":
+                let faculdadeText = childNode(withName: "faculdadeText")!
+                faculdadeText.alpha = 0
+            case "Amizades":
+                let amizadesText = childNode(withName: "amizadesText")!
+                amizadesText.alpha = 0
+            case "Bi":
+                let biText = childNode(withName: "biText")!
+                biText.alpha = 0
+            case "HQ":
+                let hqText = childNode(withName: "quadrinhosText")!
+                hqText.alpha = 0
+            case "Aplle":
+                let appleText = childNode(withName: "appleText")!
+                appleText.alpha = 0
             default:
                 break
             }

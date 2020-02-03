@@ -13,6 +13,7 @@ class PlayerEntity: GKEntity {
     
     var spriteComponent: SpriteComponent
     
+    
     init(node: SKSpriteNode) {
         
         spriteComponent = SpriteComponent(node: node)
