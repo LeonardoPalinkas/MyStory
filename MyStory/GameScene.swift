@@ -89,6 +89,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             case "Desenho":
                 let dinoText = childNode(withName: "desenhoText")!
                 dinoText.alpha = 1
+            case "Vini":
+                let viniText = childNode(withName: "viniText")!
+                viniText.alpha = 1
+            case "Livros":
+                let livrosText = childNode(withName: "livrosText")!
+                livrosText.alpha = 1
+            case "Cinema":
+                let cinemaText = childNode(withName: "cinemaText")!
+                cinemaText.alpha = 1
+            case "Games":
+                let gamesText = childNode(withName: "pcText")!
+                gamesText.alpha = 1
+            case "Rock":
+                let rockText = childNode(withName: "rockText")!
+                rockText.alpha = 1
+            case "Astronomia":
+                let astronomiaText = childNode(withName: "astronomiaText")!
+                astronomiaText.alpha = 1
+             case "Design":
+                let designText = childNode(withName: "designText")!
+                designText.alpha = 1
             default:
                 break
             }
@@ -111,6 +132,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             case "Desenho":
                 let dinoText = childNode(withName: "desenhoText")!
                 dinoText.alpha = 0
+            case "Vini":
+                let viniText = childNode(withName: "viniText")!
+                viniText.alpha = 0
+            case "Livros":
+                let livrosText = childNode(withName: "livrosText")!
+                livrosText.alpha = 1
+            case "Cinema":
+                let cinemaText = childNode(withName: "cinemaText")!
+                cinemaText.alpha = 1
+            case "Games":
+                let gamesText = childNode(withName: "pcText")!
+                gamesText.alpha = 1
+            case "Rock":
+                let rockText = childNode(withName: "rockText")!
+                rockText.alpha = 1
+            case "Astronomia":
+                let astronomiaText = childNode(withName: "astronomiaText")!
+                astronomiaText.alpha = 1
+             case "Design":
+                let designText = childNode(withName: "designText")!
+                designText.alpha = 1
             default:
                 break
             }
