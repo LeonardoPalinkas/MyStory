@@ -36,7 +36,7 @@ class Enemy {
         case "Mr Allergies":
             for i in 1...2 {
                 frames.append(SKTexture(imageNamed: "alergias\(i)"))
-                playAllergies()
+                //playAllergies()
             }
             
         case "Billy Bully":
@@ -82,21 +82,21 @@ class Enemy {
         }
     }
     
-    func playAllergies() {
-              
-              let url = Bundle.main.url(forResource: "Monster_Alien_Grunt", withExtension: "mp3")!
-              
-              do {
-                  soundPlayer =  try AVAudioPlayer(contentsOf: url)
-              } catch {
-                  print("could not load sound file")
-              }
-              soundPlayer.numberOfLoops = 2
-              soundPlayer.volume = 0
-              soundPlayer.setVolume(0.15, fadeDuration: 2.0)
-              soundPlayer.prepareToPlay()
-              soundPlayer.play()
-              
-          }
+//    func playAllergies() {
+//
+//              let url = Bundle.main.url(forResource: "Monster_Alien_Grunt", withExtension: "mp3")!
+//
+//              do {
+//                  soundPlayer =  try AVAudioPlayer(contentsOf: url)
+//              } catch {
+//                  print("could not load sound file")
+//              }
+//              soundPlayer.numberOfLoops = 2
+//              soundPlayer.volume = 0
+//              soundPlayer.setVolume(0.15, fadeDuration: 2.0)
+//              soundPlayer.prepareToPlay()
+//              soundPlayer.play()
+//
+//          }
     
 }

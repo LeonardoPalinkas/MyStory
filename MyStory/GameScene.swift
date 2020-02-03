@@ -98,6 +98,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             case "Cinema":
                 let cinemaText = childNode(withName: "cinemaText")!
                 cinemaText.alpha = 1
+            case "Amigos":
+                let amigosText = childNode(withName: "amigosText")!
+                amigosText.alpha = 1
             case "Games":
                 let gamesText = childNode(withName: "pcText")!
                 gamesText.alpha = 1
@@ -122,9 +125,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             case "HQ":
                 let hqText = childNode(withName: "quadrinhosText")!
                 hqText.alpha = 1
-            case "Aplle":
+            case "Apple":
                 let appleText = childNode(withName: "appleText")!
                 appleText.alpha = 1
+            case "Ju":
+                let juhText = childNode(withName: "juhText")!
+                juhText.alpha = 1
             
             default:
                 break
@@ -157,6 +163,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             case "Cinema":
                 let cinemaText = childNode(withName: "cinemaText")!
                 cinemaText.alpha = 0
+            case "Amigos":
+                let amigosText = childNode(withName: "amigosText")!
+                amigosText.alpha = 0
             case "Games":
                 let gamesText = childNode(withName: "pcText")!
                 gamesText.alpha = 0
@@ -181,9 +190,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate, UIGestureRecognizerDelegate 
             case "HQ":
                 let hqText = childNode(withName: "quadrinhosText")!
                 hqText.alpha = 0
-            case "Aplle":
+            case "Apple":
                 let appleText = childNode(withName: "appleText")!
                 appleText.alpha = 0
+            case "Ju":
+                let juhText = childNode(withName: "juhText")!
+                juhText.alpha = 0
             default:
                 break
             }
